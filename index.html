@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Muyumba | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #0f172a;
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+    nav ul li a.active {
+      color: #00e0ff;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      box-shadow: 0px 0px 40px rgba(0, 224, 255, 0.4);
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero-text h2 {
+      font-size: 24px;
+      color: #00e0ff;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+    .social-icons {
+      display: none;
+    }
+    .btn {
+      background: #00e0ff;
+      border: none;
+      padding: 10px 20px;
+      color: #0f172a;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00c3e6;
+    }
+    .hero-img {
+      background: #00e0ff;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00e0ff;
+    }
+    .hero-img img {
+      border-radius: 20px;
+      max-width: 300px;
+    }
+
+    /* New Social Links Styles */
+    .social-links {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      color: #00e0ff;
+      font-size: 20px;
+    }
+    
+    .social-link::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .social-link:hover::before {
+      opacity: 1;
+    }
+    
+    .social-link i {
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 224, 255, 0.3);
+    }
+    
+    .social-link:active {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 5px 10px rgba(0, 224, 255, 0.2);
+    }
+    
+    .social-link:hover i {
+      transform: scale(1.2);
+      color: white;
+    }
+    
+    .social-link.linkedin:hover {
+      background: linear-gradient(135deg, #0077b5, #005e94);
+    }
+    
+    .social-link.github:hover {
+      background: linear-gradient(135deg, #333, #000);
+    }
+    
+    .social-link.twitter:hover {
+      background: linear-gradient(135deg, #1da1f2, #1a91da);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">Portfolio.</div>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Skills.html">Skills</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hello, It's Me</h1>
+      <h2>David Muyumba</h2>
+      <h2>And I'm into <span class="multitex" style="color:#00e0ff;"></span></h2>
+      <p>I am an AWS Cloud and DevOps Engineer with a passion for creating professional, responsive, and engaging websites. I also design modern web interfaces that are both visually appealing and user-friendly.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/david-muyumba-289672328/" target="_blank" class="social-link linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com" target="_blank" class="social-link github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-link twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <button class="btn">Download CV</button>
+    </div>
+    <div class="hero-img">
+      <img src="image/picofme (6).png" alt="David Muyumba">
+    </div>
+  </section>
+
+  <script>
+    var typingEffect = new Typed(".multitex", {
+      strings: ["AWS Cloud", "DevOps", "Web designer"],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1500
+    });
+  </script>
+</body>
+</html>

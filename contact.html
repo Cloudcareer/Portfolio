@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact {
+            max-width: 1100px;
+            margin: auto;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0px 0px 40px rgba(0, 224, 255, 0.4);
+            flex: 1;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .detail-box {
+            background-color: #1e293b;
+            border-left: 4px solid #00e0ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .detail-box:hover {
+            background: #273549;
+            transform: translateY(-5px);
+        }
+
+        /* New Form Styles */
+        .form-card1 {
+            background-image: linear-gradient(163deg, #00e0ff 0%, #00e0ff 100%);
+            border-radius: 22px;
+            transition: all 0.3s;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-card1:hover {
+            box-shadow: 0px 0px 30px 1px rgba(0, 224, 255, 0.3);
+        }
+
+        .form-card2 {
+            border-radius: 0;
+            transition: all 0.2s;
+            padding: 1px;
+        }
+
+        .form-card2:hover {
+            transform: scale(0.98);
+            border-radius: 20px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            font-family: inherit;
+            gap: 10px;
+            padding-inline: 2em;
+            padding-bottom: 0.4em;
+            background-color: #1e293b;
+            border-radius: 20px;
+        }
+
+        .form-heading {
+            text-align: center;
+            margin: 2em;
+            color: #00e0ff;
+            font-size: 1.5em;
+            background-color: transparent;
+            align-self: center;
+        }
+
+        .form-field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            border-radius: 10px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #1e293b;
+            box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.5);
+        }
+
+        .input-field {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #cbd5e1;
+            padding-inline: 1em;
+            font-size: 1rem;
+        }
+
+        .input-field::placeholder {
+            color: #64748b;
+        }
+
+        .sendMessage-btn {
+            cursor: pointer;
+            margin-bottom: 2em;
+            margin-top: 1em;
+            padding: 1em;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #00e0ff;
+            font-weight: bold;
+            outline: 1px solid #00e0ff;
+            transition: all ease-in-out 0.3s;
+            font-size: 1rem;
+        }
+
+        .sendMessage-btn:hover {
+            transition: all ease-in-out 0.3s;
+            background-color: #00e0ff;
+            color: #0f172a;
+            cursor: pointer;
+            box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.3);
+        }
+
+        /* Thank you message styles */
+        .thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 2em;
+            background-color: #1e293b;
+            border-radius: 20px;
+            border-left: 4px solid #00e0ff;
+            margin-top: 20px;
+        }
+
+        .thank-you-message h3 {
+            color: #00e0ff;
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
+        .thank-you-message p {
+            color: #cbd5e1;
+            font-size: 1.1em;
+        }
+
+        /* Back Button Styles */
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .back-btn {
+            --glow-color: rgb(217, 176, 255);
+            --glow-spread-color: rgba(191, 123, 255, 0.781);
+            --enhanced-glow-color: rgb(231, 206, 255);
+            --btn-color: rgb(100, 61, 136);
+            border: .25em solid var(--glow-color);
+            padding: 1em 3em;
+            color: var(--glow-color);
+            font-size: 15px;
+            font-weight: bold;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 1em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+            text-shadow: 0 0 .5em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(2em);
+            opacity: .7;
+            transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+        }
+
+        .back-btn:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 2em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+        }
+
+        .back-btn:active {
+            box-shadow: 0 0 0.6em .25em var(--glow-color),
+                    0 0 2.5em 2em var(--glow-spread-color),
+                    inset 0 0 .5em .25em var(--glow-color);
+        }
+    </style>
+</head>
+<body>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+
+            <div class="contact-details">
+                <div class="detail-box">
+                    <h3>Phone Number</h3>
+                    <p>+27 604 208 383</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Email</h3>
+                    <p>cloudcareeraws@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="form-card1">
+                <div class="form-card2">
+                    <form id="contactForm" class="form">
+                        <p class="form-heading">Send Me a Message</p>
+
+                        <div class="form-field">
+                            <input required placeholder="Your Name" class="input-field" type="text" name="name" id="name" />
+                        </div>
+
+                        <div class="form-field">
+                            <input required placeholder="Your Email" class="input-field" type="email" name="email" id="email" />
+                        </div>
+
+                        <div class="form-field">
+                            <input required placeholder="Subject" class="input-field" type="text" name="subject" id="subject" />
+                        </div>
+
+                        <div class="form-field">
+                            <textarea required placeholder="Your Message" cols="30" rows="3" class="input-field" name="message" id="message"></textarea>
+                        </div>
+
+                        <button type="submit" class="sendMessage-btn">Send Message</button>
+                    </form>
+
+                    <div id="thankYouMessage" class="thank-you-message">
+                        <h3>Thank You!</h3>
+                        <p>Your message has been sent successfully. I'll get back to you soon!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-btn-container">
+        <a href="index.html" class="back-btn">Back</a>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll simulate sending the email
+            console.log('Message sent:', { name, email, subject, message });
+            
+            // Hide the form and show thank you message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            
+            // Clear the form
+            this.reset();
+            
+            // In a real implementation, you would use something like:
+            // fetch('send_email.php', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         name: name,
+            //         email: email,
+            //         subject: subject,
+            //         message: message
+            //     }),
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     document.getElementById('contactForm').style.display = 'none';
+            //     document.getElementById('thankYouMessage').style.display = 'block';
+            //     this.reset();
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            //     alert('There was an error sending your message. Please try again.');
+            // });
+        });
+    </script>
+</body>
+</html>

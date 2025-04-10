@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | David Muyumba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: white;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .projects {
+      max-width: 1100px;
+      margin: auto;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0px 0px 40px rgba(0, 224, 255, 0.4);
+      flex: 1;
+    }
+    .projects h2 {
+      font-size: 32px;
+      color: #00e0ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .projects div {
+      background: #1e293b;
+      border-left: 4px solid #00e0ff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .projects div:hover {
+      background: #273549;
+      transform: translateY(-5px);
+    }
+    .projects h3 {
+      color: #00e0ff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .projects p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    /* Back Button Styles */
+    .back-btn-container {
+      text-align: center;
+      margin-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .back-btn {
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
+      --btn-color: rgb(100, 61, 136);
+      border: .25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--glow-color);
+      font-size: 15px;
+      font-weight: bold;
+      background-color: var(--btn-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+      text-shadow: 0 0 .5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-btn::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: .7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+    }
+
+    .back-btn:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 2em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+    }
+
+    .back-btn:active {
+      box-shadow: 0 0 0.6em .25em var(--glow-color),
+              0 0 2.5em 2em var(--glow-spread-color),
+              inset 0 0 .5em .25em var(--glow-color);
+    }
+  </style>
+</head>
+<body>
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div><h3>Cloud Infrastructure Deployment</h3><p>Designed and deployed scalable AWS cloud infrastructure using Terraform and CI/CD pipelines.</p></div>
+    <div><h3>I deployed a multi-tier WordPress service using Terraform</h3><p>This involved creating a VPC with public and private subnets. 
+        An RDS instance and an EC2 instances were deployed in the private subnets to prevent direct access from the wider internet. 
+        I installed and configured the LAMP stack and WordPress on the EC2 instance. 
+        I then configured an ALB in the public subnets so that I could route requested traffic from the internet to my private WordPress service.
+        Connection between all these services were controlled using security groups with least permissive access in mind. All these resources were created using a Terraform script I wrote.
+        .</p></div>
+    <div><h3>E-commerce Product Landing Page</h3><p>Built a sleek, responsive landing page using HTML, CSS, and JavaScript with integrated animations and transitions.</p></div>
+    <div><h3>DevOps Dashboard</h3><p>Created a real-time monitoring dashboard using Grafana and Prometheus for system metrics and alerting.</p></div>
+    <div><h3>CI/CD Pipeline Automation</h3><p>Implemented automated pipelines with GitHub Actions and integrated Docker for seamless deployment workflows.</p></div>
+    <div><h3>Multi-Cloud Management Tool</h3><p>Built a dashboard to manage resources across AWS, Azure, and GCP using APIs and modern frontend technologies.</p></div>
+    <div><h3>I created an autoscaling EC2 infrastructure to ensure that an Apache web service was self-healing and scalable. </h3><p>This involved configuring Launch templates, UserData scripts, ALB, Target Groups and CloudWatch Alarms to ensure scale-out and scale-in activities based on CPU metrics.
+    </p></div>
+    <div><h3>Monitoring and Alerting System</h3><p>Developed a full-stack monitoring system with alert triggers for server downtime using Node.js and Prometheus.</p></div>
+  </section>
+
+  <div class="back-btn-container">
+    <a href="index.html" class="back-btn">Back</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

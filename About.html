@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0px 0px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #00e0ff;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .section:hover {
+            background: #273549;
+            transform: translateY(-5px);
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            color: #00e0ff;
+            margin-bottom: 15px;
+        }
+
+        .section p, .section ul {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #00e0ff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #00b5cc;
+        }
+    </style>
+</head>
+<body>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="intro">
+                Hello! I'm David Muyumba, a passionate developer with a strong background in web development, cloud technologies, and DevOps practices. I strive to create innovative solutions that empower businesses to scale and succeed in today's fast-paced digital world.
+            </p>
+
+            <div class="about-details">
+                <div class="section">
+                    <h3>My Journey</h3>
+                    <p>
+                        My journey into the world of technology started at an early age, where I developed a fascination with how things work behind the scenes. Over the years, I honed my skills in various programming languages, cloud services, and development practices, from building websites to automating deployment pipelines.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h3>Skills & Expertise</h3>
+                    <p>
+                        I specialize in the following areas:
+                    </p>
+                    <ul>
+                        <li>AWS Cloud Services</li>
+                        <li>DevOps (CI/CD, Docker, Kubernetes)</li>
+                        <li>Linux & Shell Scripting</li>
+                        <li>Terraform & CloudFormation</li>
+                        <li>Git & GitHub Actions</li>
+                        <li>Agile & Scrum methodologies</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Values & Approach</h3>
+                    <p>
+                        My approach to development is centered around collaboration, continuous learning, and delivering value. I strongly believe in the power of teamwork and always strive to bring creative and efficient solutions to the table.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h3>Why Choose Me?</h3>
+                    <p>
+                        With experience in both front-end and back-end technologies, along with expertise in cloud computing and DevOps, I offer a holistic approach to building scalable and secure applications. Whether you’re a startup or an established company, I can help you transform your digital presence and optimize your infrastructure for growth.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-button">
+                <a href="contact.html" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript for scroll animations or interactive effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+
+            // Adding smooth scroll effects when user interacts
+            sections.forEach(section => {
+                section.addEventListener('mouseover', function () {
+                    section.style.transform = 'scale(1.05)';
+                    section.style.transition = 'transform 0.3s ease';
+                });
+
+                section.addEventListener('mouseout', function () {
+                    section.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #skills {
+            max-width: 1100px;
+            margin: auto;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0px 0px 40px rgba(0, 224, 255, 0.4);
+            flex: 1;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background-color: #1e293b;
+            border-left: 4px solid #00e0ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .skill-box:hover {
+            background: #273549;
+            transform: translateY(-5px);
+        }
+
+        /* Animated skills loader styles */
+        .animated-skills-container {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .card {
+            /* color used to softly clip top and bottom of the .words container */
+            --bg-color: #1e293b;
+            background-color: var(--bg-color);
+            padding: 1rem 2rem;
+            border-radius: 1.25rem;
+            border-left: 4px solid #00e0ff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .loader {
+            color: rgb(124, 124, 124);
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 25px;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            height: 40px;
+            padding: 10px 10px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            border-radius: 8px;
+        }
+
+        .loader p {
+            color: #00e0ff;
+            margin-right: 15px;
+        }
+
+        .words {
+            overflow: hidden;
+            position: relative;
+            height: 40px;
+            flex-grow: 1;
+        }
+        
+        .words::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                var(--bg-color) 10%,
+                transparent 30%,
+                transparent 70%,
+                var(--bg-color) 90%
+            );
+            z-index: 20;
+        }
+
+        .word {
+            display: block;
+            height: 100%;
+            padding-left: 6px;
+            color: #956afa;
+            animation: cycle-words 24s infinite;
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+        }
+
+        @keyframes cycle-words {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            2% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            8% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            10% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        /* Set individual delays for each word */
+        .word:nth-child(1) { animation-delay: 0s; }
+        .word:nth-child(2) { animation-delay: 2s; }
+        .word:nth-child(3) { animation-delay: 4s; }
+        .word:nth-child(4) { animation-delay: 6s; }
+        .word:nth-child(5) { animation-delay: 8s; }
+        .word:nth-child(6) { animation-delay: 10s; }
+        .word:nth-child(7) { animation-delay: 12s; }
+        .word:nth-child(8) { animation-delay: 14s; }
+        .word:nth-child(9) { animation-delay: 16s; }
+        .word:nth-child(10) { animation-delay: 18s; }
+        .word:nth-child(11) { animation-delay: 20s; }
+        .word:nth-child(12) { animation-delay: 22s; }
+        .word:nth-child(13) { animation-delay: 24s; }
+        .word:nth-child(14) { animation-delay: 26s; }
+
+        /* Back Button Styles */
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .back-btn {
+            --glow-color: rgb(217, 176, 255);
+            --glow-spread-color: rgba(191, 123, 255, 0.781);
+            --enhanced-glow-color: rgb(231, 206, 255);
+            --btn-color: rgb(100, 61, 136);
+            border: .25em solid var(--glow-color);
+            padding: 1em 3em;
+            color: var(--glow-color);
+            font-size: 15px;
+            font-weight: bold;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 1em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+            text-shadow: 0 0 .5em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(2em);
+            opacity: .7;
+            transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+        }
+
+        .back-btn:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 2em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+        }
+
+        .back-btn:active {
+            box-shadow: 0 0 0.6em .25em var(--glow-color),
+                    0 0 2.5em 2em var(--glow-spread-color),
+                    inset 0 0 .5em .25em var(--glow-color);
+        }
+    </style>
+</head>
+<body>
+    <section id="skills">
+        <h2>Skills</h2>
+        
+        <!-- Animated skills loader -->
+        <div class="animated-skills-container">
+            <div class="card">
+                <div class="loader">
+                    <p>Skills</p>
+                    <div class="words">
+                        <span class="word">Linux Command Line</span>
+                        <span class="word">Bash Scripting</span>
+                        <span class="word">Python</span>
+                        <span class="word">AWS Lambda</span>
+                        <span class="word">RDS</span>
+                        <span class="word">Terraform</span>
+                        <span class="word">CI/CD Pipelines</span>
+                        <span class="word">Networking</span>
+                        <span class="word">Git & GitHub Actions</span>
+                        <span class="word">HTML, CSS, JavaScript</span>
+                        <span class="word">UI/UX Design</span>
+                        <span class="word">AWS Cloud Services</span>
+                        <span class="word">Figma & Adobe XD</span>
+                        <span class="word">Jenkins & Ansible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-container">
+            <div class="skill-box">AWS Cloud Services</div>
+            <div class="skill-box">DevOps (CI/CD, Docker, Kubernetes)</div>
+            <div class="skill-box">Linux & Shell Scripting</div>
+            <div class="skill-box">Terraform & CloudFormation</div>
+            <div class="skill-box">Git & GitHub Actions</div>
+            <div class="skill-box">HTML, CSS, JavaScript</div>
+            <div class="skill-box">UI/UX Design</div>
+            <div class="skill-box">React & Next.js</div>
+            <div class="skill-box">Figma & Adobe XD</div>
+            <div class="skill-box">Jenkins & Ansible</div>
+            <div class="skill-box">Linux Command Line</div>
+            <div class="skill-box">Bash Scripting</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">AWS Lambda</div>
+            <div class="skill-box">RDS</div>
+        </div>
+    </section>
+
+    <div class="back-btn-container">
+        <a href="index.html" class="back-btn">Back</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
